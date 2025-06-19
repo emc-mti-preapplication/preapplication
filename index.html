@@ -102,10 +102,8 @@
     </style>
 </head>
 <body>
-    <link rel="icon" type="image/png" href="https://via.placeholder.com/32.png" />
-  <div style="text-align:center; margin-bottom: 20px;">
-    <img src="photos/top_banner.png" alt="Top Banner" style="max-width:100%; border-radius: 8px;">
-</div>
+  
+
     <div class="overlay">
         <div class="container">
             <h1>Equity-Motorline</h1>
@@ -245,13 +243,41 @@
     <div style="position: fixed; top: 0; left: 0; height: 100%; z-index: 500;">
     <img src="https://via.placeholder.com/120x600?text=Left+Banner" alt="Left Banner" style="height: 100%;">
 </div>
-<div style="position: fixed; top: 0; left: 0; height: 100%; z-index: 500;">
-    <img src="photos/left_banner.png" alt="Left Banner" style="height: 100%;">
-</div>
-<div style="position: fixed; top: 0; right: 0; height: 100%; z-index: 500;">
-    <img src="photos/right_banner.png" alt="Right Banner" style="height: 100%;">
-</div>
+    
+<style>
+    .side-banner {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 120px;
+        max-height: 90vh;
+        z-index: 500;
+    }
+    .side-banner img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+    .side-banner.left {
+        left: 10px;
+    }
+    .side-banner.right {
+        right: 10px;
+    }
 
+    @media (max-width: 768px) {
+        .side-banner {
+            display: none;
+        }
+    }
+</style>
+
+<div class="side-banner left">
+    <img src="photos/left_banner.png" alt="Left Banner">
+</div>
+<div class="side-banner right">
+    <img src="photos/right_banner.png" alt="Right Banner">
+</div>
     
 </body>
 </html>
