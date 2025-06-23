@@ -202,15 +202,17 @@
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
 
-                const formData = {
-                    name: form.name.value,
-                    address: form.address.value,
-                    phone: form.phone.value,
-                    payment_mode: form.payment_mode.value,
-                    term: form.payment_mode.value === 'INSTALLMENT' ? form.term.value : 'N/A',
-                    motorcycle_unit: form.motorcycle_unit.value,
-                    occupation: form.occupation.value
-                };
+           const formData = {
+    name: form.name.value,
+    address: form.address.value,
+    phone: form.phone.value,
+    payment_mode: form.payment_mode.value,
+    term: form.payment_mode.value === 'INSTALLMENT' ? form.term.value : 'N/A',
+    motorcycle_unit: form.motorcycle_unit.value,
+    occupation: form.occupation.value,
+    branch: form.branch.value
+};
+
 
                 const scriptUrl = 'https://script.google.com/macros/s/AKfycbwv2bhvSh71rG9JHjBFrow9oj3QVTzkushaLfrCSPjval3CsgMtqATrbq64kRuiUX8k/exec';
 
@@ -274,6 +276,32 @@
 </div>
 <div class="side-banner right">
     <img src="photos/right_banner.png" alt="Right Banner">
+</div>
+
+    <div class="form-group">
+    <label for="branch">Branch *</label>
+    <select id="branch" name="branch" required>
+        <option value="" disabled selected>Select branch</option>
+        <option value="MTI ALICIA">MTI ALICIA</option>
+        <option value="MTI AMULUNG">MTI AMULUNG</option>
+        <option value="MTI BAMBANG">MTI BAMBANG</option>
+        <option value="MTI BENITO SOLIVEN">MTI BENITO SOLIVEN</option>
+        <option value="MTI CAUAYAN">MTI CAUAYAN</option>
+        <option value="MTI GATTARAN">MTI GATTARAN</option>
+        <option value="MTI ILAGAN">MTI ILAGAN</option>
+        <option value="MTI KASIBU">MTI KASIBU</option>
+        <option value="MTI MADDELA">MTI MADDELA</option>
+        <option value="MTI PIAT">MTI PIAT</option>
+        <option value="MTI ROXAS">MTI ROXAS</option>
+        <option value="MTI SANTIAGO">MTI SANTIAGO</option>
+        <option value="MTI SOLANA">MTI SOLANA</option>
+        <option value="MTI SOLANO">MTI SOLANO</option>
+        <option value="MTI TUMAUINI">MTI TUMAUINI</option>
+        <option value="MTI BAYOMBONG">MTI BAYOMBONG</option>
+        <option value="MTI CABARROGUIS">MTI CABARROGUIS</option>
+        <option value="EMC CAUAYAN (FOR HONDA ONLY)">EMC CAUAYAN (FOR HONDA ONLY)</option>
+        <option value="EMC MADDELA (FOR HONDA ONLY)">EMC MADDELA (FOR HONDA ONLY)</option>
+    </select>
 </div>
     
 </body>
