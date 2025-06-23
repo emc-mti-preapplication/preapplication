@@ -145,7 +145,7 @@
           <label for="term">Installment Term *</label>
           <select id="term" name="term">
             <option value="" disabled selected>Select term</option>
-            <option value="1 year">1 YEARS</option>
+            <option value="1 year">1 YEAR</option>
             <option value="2 years">2 YEARS</option>
             <option value="3 years">3 YEARS</option>
           </select>
@@ -240,7 +240,7 @@
           term: form.payment_mode.value === "INSTALLMENT" ? form.term.value : "N/A",
           motorcycle_unit: form.motorcycle_unit.value,
           occupation: form.occupation.value,
-          branch: form.branch.value
+          branch: form.branch.value, 
         };
 
         const scriptUrl = "https://script.google.com/macros/s/AKfycbwtcLQr8vTJiUyrGYPpnAXriD4TY25YGl13lT0K8LBvlgBEcSqEYafM6fgCuRBXCpFi/exec";
