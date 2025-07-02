@@ -175,30 +175,30 @@
       <h1>WELCOME<br>TO EQUITY-MOTORLINE</h1>
       <div class="tagline">ANG KUMPANYANG MAPAGKAKATIWALAAN!</div>
       <ul>
-        <li>High Quality Motorcycles!</li>
-        <li>Low Amortization!</li>
-        <li>Lots of Freebies!</li>
+        <h2>High Quality Motorcycles!</h2>
+        <h2>Low Amortization!</h2>
+        <h2>Lots of Freebies!</h2>
       </ul>
     </div>
-
+//dito yung form
     <div class="container">
       <h2>FILL THE FORM</h2>
-      <p>we'll call you back!</p>
+      <p>We'll call you back!</p>
       <form id="applicationForm">
         <div class="form-group">
-          <label for="name">name:</label>
+          <label for="name">Name:</label>
           <input type="text" id="name" name="name" required placeholder="Juan Dela Cruz" />
         </div>
         <div class="form-group">
-          <label for="address">address:</label>
+          <label for="address">Address:</label>
           <textarea id="address" name="address" rows="3" required placeholder="123 Sample St., City, Country"></textarea>
         </div>
         <div class="form-group">
-          <label for="phone">phone:</label>
+          <label for="phone">Phone:</label>
           <input type="tel" id="phone" name="phone" required placeholder="09123456789" pattern="[0-9]{11}" />
         </div>
         <div class="form-group">
-          <label for="payment_mode">mode of payment:</label>
+          <label for="payment_mode">Mode of payment:</label>
           <select id="payment_mode" name="payment_mode" required>
             <option value="" disabled selected>Select payment option</option>
             <option value="CASH">Cash</option>
@@ -206,7 +206,7 @@
           </select>
         </div>
         <div class="form-group hidden" id="installmentTermsContainer">
-          <label for="term">installment term:</label>
+          <label for="term">Installment term:</label>
           <select id="term" name="term">
             <option value="" disabled selected>Select term</option>
             <option value="1 year">1 YEAR</option>
@@ -215,15 +215,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="motorcycle_unit">motorcycle unit:</label>
+          <label for="motorcycle_unit">Motorcycle unit:</label>
           <input type="text" id="motorcycle_unit" name="motorcycle_unit" required placeholder="Honda Click 125" />
         </div>
         <div class="form-group">
-          <label for="occupation">occupation/source of income:</label>
+          <label for="occupation">Occupation/source of income:</label>
           <input type="text" id="occupation" name="occupation" required placeholder="Self-employed" />
         </div>
         <div class="form-group">
-          <label for="branch">branch:</label>
+          <label for="branch">Branch:</label>
           <select id="branch" name="branch" required>
             <option value="" disabled selected>Select branch</option>
             <option value="MTI ALICIA">MTI ALICIA</option>
@@ -263,7 +263,7 @@
       </div>
     </div>
   </div>
-
+//dito yung papuntang gsheet
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const paymentModeSelect = document.getElementById("payment_mode");
