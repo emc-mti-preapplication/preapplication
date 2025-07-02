@@ -3,66 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EMC MTI - Pre-Application</title>
+  <title>Equity‑Motorline – Pre‑Application</title>
   <link rel="icon" type="image/png" href="photos/top_banner.jpg" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=2070&q=80') no-repeat center center fixed;
       background-size: cover;
-      color: #333;
-    }
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
-      min-height: 100vh;
-      padding: 50px 20px;
       color: #fff;
     }
-    .container {
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px;
+      gap: 60px;
+    }
+
+    .left-section {
       max-width: 600px;
-      margin: auto;
-      background-color: #fff;
+    }
+
+    .left-section h1 {
+      font-size: 48px;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .left-section .tagline {
+      background: white;
+      display: inline-block;
+      color: black;
+      padding: 6px 12px;
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .left-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .left-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .left-section ul li::before {
+      content: "\2022";
+      color: #3b82f6;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.85);
       padding: 30px;
       border-radius: 8px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      color: #333;
+      max-width: 400px;
+      width: 100%;
     }
-    h1, p { text-align: center; }
+
+    .container h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .container p {
+      font-size: 14px;
+      color: #3b82f6;
+      margin-bottom: 20px;
+    }
+
     .form-group {
       margin-bottom: 15px;
     }
+
     label {
       display: block;
       margin-bottom: 5px;
+      font-size: 14px;
     }
-    input, select, textarea, button {
+
+    input, select, textarea {
       width: 100%;
       padding: 10px;
       border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-    textarea { resize: vertical; }
-    button {
-      background-color: #007BFF;
+      border-radius: 4px;
+      font-size: 14px;
+      background: #1f1f1f;
       color: white;
-      border: none;
-      cursor: pointer;
-      margin-top: 10px;
     }
-    button:hover { background-color: #0056b3; }
-    .hidden { display: none !important; }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #3b82f6;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #2563eb;
+    }
+
     .success-modal {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.6);
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 1000;
     }
+
     .success-modal-content {
       background: white;
       padding: 20px;
@@ -70,6 +144,7 @@
       text-align: center;
       max-width: 300px;
     }
+
     .icon-circle {
       background-color: #d1fae5;
       color: #10b981;
@@ -81,60 +156,49 @@
       justify-content: center;
       margin: 0 auto 15px;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to { opacity: 1; transform: scale(1); }
-    }
-    #successModal > div {
-      animation: fadeIn 0.3s ease-out;
-    }
-    .side-banner {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 200px;
-      max-height: 150vh;
-      z-index: 500;
-    }
-    .side-banner img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-    .side-banner.left { left: 100px; }
-    .side-banner.right { right: 100px; }
-    @media (max-width: 1080px) {
-      .side-banner { display: none; }
+
+    @media (max-width: 768px) {
+      .overlay {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 30px;
+      }
+      .left-section {
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="side-banner left">
-    <img src="photos/left_banner.png" alt="Left Banner" />
-  </div>
-  <div class="side-banner right">
-    <img src="photos/right_banner.png" alt="Right Banner" />
-  </div>
-
   <div class="overlay">
+    <div class="left-section">
+      <h1>RAISE YOUR BUSINESS<br>TO NEW HEIGHTS</h1>
+      <div class="tagline">JOIN TO THE PROFESSIONALS</div>
+      <ul>
+        <li>access to a training materials</li>
+        <li>possibility to consultation with the advisers</li>
+        <li>help with making a business strategies</li>
+      </ul>
+    </div>
+
     <div class="container">
-      <h1>Equity-Motorline</h1>
-      <p>Pre-Application Form</p>
+      <h2>FILL THE FORM</h2>
+      <p>we'll call you back!</p>
       <form id="applicationForm">
         <div class="form-group">
-          <label for="name">Full Name *</label>
+          <label for="name">name:</label>
           <input type="text" id="name" name="name" required placeholder="Juan Dela Cruz" />
         </div>
         <div class="form-group">
-          <label for="address">Address *</label>
+          <label for="address">address:</label>
           <textarea id="address" name="address" rows="3" required placeholder="123 Sample St., City, Country"></textarea>
         </div>
         <div class="form-group">
-          <label for="phone">Phone Number *</label>
+          <label for="phone">phone:</label>
           <input type="tel" id="phone" name="phone" required placeholder="09123456789" pattern="[0-9]{11}" />
         </div>
         <div class="form-group">
-          <label for="payment_mode">Mode of Payment *</label>
+          <label for="payment_mode">mode of payment:</label>
           <select id="payment_mode" name="payment_mode" required>
             <option value="" disabled selected>Select payment option</option>
             <option value="CASH">Cash</option>
@@ -142,7 +206,7 @@
           </select>
         </div>
         <div class="form-group hidden" id="installmentTermsContainer">
-          <label for="term">Installment Term *</label>
+          <label for="term">installment term:</label>
           <select id="term" name="term">
             <option value="" disabled selected>Select term</option>
             <option value="1 year">1 YEAR</option>
@@ -151,15 +215,15 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="motorcycle_unit">Motorcycle Unit *</label>
+          <label for="motorcycle_unit">motorcycle unit:</label>
           <input type="text" id="motorcycle_unit" name="motorcycle_unit" required placeholder="Honda Click 125" />
         </div>
         <div class="form-group">
-          <label for="occupation">Occupation / Source of Income *</label>
+          <label for="occupation">occupation/source of income:</label>
           <input type="text" id="occupation" name="occupation" required placeholder="Self-employed" />
         </div>
         <div class="form-group">
-          <label for="branch">Branch *</label>
+          <label for="branch">branch:</label>
           <select id="branch" name="branch" required>
             <option value="" disabled selected>Select branch</option>
             <option value="MTI ALICIA">MTI ALICIA</option>
@@ -176,27 +240,26 @@
             <option value="MTI SANTIAGO">MTI SANTIAGO</option>
             <option value="MTI SOLANA">MTI SOLANA</option>
             <option value="MTI SOLANO">MTI SOLANO</option>
-             <option value="MTI SOLANO">MTI TUMAUINI</option>
-            <option value="MTI TUMAUINI">YAMAHA TUMAUINI3S</option>
-            <option value="MTI BAYOMBONG">YAMAHA BAYOMBONG 3S</option>
-            <option value="MTI CABARROGUIS">YAMAHA CABARROGUIS 3S</option>
-             <option value="MTI CABARROGUIS">YAMAHA ROXAS 3S</option>
-            <option value="EMC CAUAYAN (FOR HONDA ONLY)">EMC CAUAYAN (FOR HONDA ONLY)</option>
-            <option value="EMC MADDELA (FOR HONDA ONLY)">EMC MADDELA (FOR HONDA ONLY)</option>
+            <option value="MTI TUMAUINI">MTI TUMAUINI</option>
+            <option value="YAMAHA TUMAUINI3S">YAMAHA TUMAUINI 3S</option>
+            <option value="YAMAHA BAYOMBONG 3S">YAMAHA BAYOMBONG 3S</option>
+            <option value="YAMAHA CABARROGUIS 3S">YAMAHA CABARROGUIS 3S</option>
+            <option value="YAMAHA ROXAS 3S">YAMAHA ROXAS 3S</option>
+            <option value="EMC CAUAYAN (HONDA)">EMC CAUAYAN (FOR HONDA ONLY)</option>
+            <option value="EMC MADDELA (HONDA)">EMC MADDELA (FOR HONDA ONLY)</option>
           </select>
         </div>
-        <button type="submit" id="submitBtn"><i class="fas fa-paper-plane"></i> Submit Application</button>
+        <button type="submit" id="submitBtn"><i class="fas fa-paper-plane"></i> SIGN UP NOW</button>
       </form>
-    </div>
-
-    <div id="successModal" class="hidden success-modal">
-      <div class="success-modal-content">
-        <div class="icon-circle">
-          <i class="fas fa-check"></i>
+      <div id="successModal" class="hidden success-modal">
+        <div class="success-modal-content">
+          <div class="icon-circle">
+            <i class="fas fa-check"></i>
+          </div>
+          <h3 style="color: black;">Application Submitted!</h3>
+          <p style="color: black;">Thank you for your application. We'll contact you shortly.</p>
+          <button id="closeModalBtn">Close</button>
         </div>
-        <h3 style="color: black;">Application Submitted!</h3>
-        <p style="color: black;">Thank you for your application. We'll contact you shortly.</p>
-        <button id="closeModalBtn">Close</button>
       </div>
     </div>
   </div>
@@ -263,8 +326,9 @@
           .catch(() => alert("Submission failed. Please try again."))
           .finally(() => {
             submitBtn.disabled = false;
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Application';
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> SIGN UP NOW';
           });
+
       });
 
       closeModalBtn.addEventListener("click", () => {
